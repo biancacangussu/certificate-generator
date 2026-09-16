@@ -8,7 +8,7 @@ import { BaseUI } from './_components/base-ui/base-ui';
 import { Certificates } from './pages/certificates/certificates';
 
 @Component({
-  imports: [Navbar, PrimaryButton, SecondaryButton, CertificateItem, BaseUI, Certificates],
+  imports: [Navbar, BaseUI, Certificates],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
