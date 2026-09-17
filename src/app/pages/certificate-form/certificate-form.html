@@ -1,26 +1,34 @@
 <div d-flex flex-column align-items-center>
   <div class="content-titles">
-    <h1 class="fw-bold custom-title">Generated Certificates</h1>
-    <p class="text-muted mb-4 custom-subtitle">Visualize all the certificates you have generated below.</p>
+    <h1 class="fw-bold custom-title">Certificate Generator</h1>
+    <p class="text-muted mb-4 custom-subtitle">Fill out the form below to generate a new certificate</p>
   </div>
   <div class="custom-card w-100">
     <h2 class="card-title">New Certificate</h2>
     <div class="mb-3">
       <label class="form-label">Name</label>
-      <input type="text" class="form-control" placeholder="Student name" />
+      <input class="custom-input" type="text" class="form-control" placeholder="Student name" />
     </div>
 
     <div class="mb-3 d-flex align-items-end">
       <div class="flex-grow-1 me-2">
         <label class="form-label">Activity</label>
-      <input type="text" class="form-control" placeholder="Activity made"/>
+      <input class="custom-input" type="text" class="form-control" placeholder="Activity made"/>
       </div>
       <app-secondary-button></app-secondary-button>
     </div>
 
     <div class="activities-group">
       <label class="form-label">Activities List</label>
-      <div class="custom-card w-100"></div>
+      <div class="item-list w-100">
+      <div class="item">
+        <span class="item-text">Lorem ipsum dolor sit amet</span>
+        <div class="remove-button">
+          <i class="ph-bold ph-x"></i>
+        </div>
+      </div>
+      <hr>
+      </div>
     </div>
 
     <app-primary-button></app-primary-button>
