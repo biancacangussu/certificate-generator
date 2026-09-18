@@ -1,6 +1,6 @@
 .navbar {
   background-color: #fff;
-  padding: 1rem 2rem;
+  padding: 1rem 28px 1rem 12px;
   border-bottom: 1px solid #e2e8f0;
 }
 
@@ -12,6 +12,20 @@
   color: #3B5AC2;
 }
 
+.nav-link {
+  padding: 6px !important;
+}
+
 .nav-link.active {
   color: #3B5AC2;
+  font-weight: 600;
+}
+
+.nav-item {
+  cursor: pointer;
+  margin-left: 18px !important;
+}
+
+.nav-item i {
+  font-size: 20px;
 }
