@@ -7,7 +7,8 @@
     <h2 class="card-title">New Certificate</h2>
     <div class="mb-3 custom-input-group">
       <label for="name" class="form-label">Name</label>
-      <input id="name" class="custom-input" type="text" class="form-control" placeholder="Student name" />
+      <input [(ngModel)]="name" id="name" class="custom-input" type="text" class="form-control"
+        placeholder="Student name" />
       <div class="error-message d-flex align-items-center">
         <i class="ph ph-warning-circle"></i>
         <p class="mb-0">Error message</p>
@@ -17,7 +18,8 @@
     <div class="mb-3 d-flex align-items-end custom-input-group">
       <div class="flex-grow-1 me-2">
         <label for="activity" class="form-label">Activity</label>
-      <input id="activity" class="custom-input" type="text" class="form-control" placeholder="Activity made"/>
+        <input [(ngModel)]="activity" id="activity" class="custom-input" type="text" class="form-control"
+          placeholder="Activity made" />
       </div>
       <app-secondary-button></app-secondary-button>
     </div>
@@ -25,13 +27,16 @@
     <div class="activities-group">
       <label class="form-label">Activities List</label>
       <div class="item-list w-100">
-      <div class="item">
-        <span class="item-text">Lorem ipsum dolor sit amet</span>
-        <div class="remove-button">
-          <i class="ph-bold ph-x"></i>
+        @for (activity of activities; track $index) {
+        <div class="item">
+          <span class="item-text">{{ activity }}</span>
+          <div class="remove-button">
+            <i class="ph-bold ph-x"></i>
+          </div>
         </div>
-      </div>
-      <hr>
+        @if ($index < activities.length - 1) { <hr>
+          }
+        }
       </div>
     </div>
 
