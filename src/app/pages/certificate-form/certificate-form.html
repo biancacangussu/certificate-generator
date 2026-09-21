@@ -10,7 +10,7 @@
     <div class="mb-3 custom-input-group">
       <label [ngClass]="{'text-danger-label': invalidField(nameRef)}" for="name" class="form-label">Name</label>
       <input
-        [(ngModel)]="name"
+        [(ngModel)]="certificate.name"
         #nameRef="ngModel"
         name="name"
         maxlength="150"
@@ -52,19 +52,19 @@
     <div class="activities-group">
       <label class="form-label">Activities List</label>
       <div class="item-list w-100">
-        @for (activity of activities; track $index) {
+        @for (activity of certificate.activities; track $index) {
         <div class="item">
           <span class="item-text">{{ activity }}</span>
           <div (click)="removeActivity($index)" class="remove-button">
             <i class="ph-bold ph-x"></i>
           </div>
         </div>
-        @if ($index < activities.length - 1) {
+        @if ($index < certificate.activities.length - 1) {
         <hr />
         } }
       </div>
     </div>
 
-    <app-primary-button [disabled]="!validForm()" textButton="Generate Certificate"></app-primary-button>
+    <app-primary-button (click)="submit()" [disabled]="!validForm()" textButton="Generate Certificate"></app-primary-button>
   </div>
 </form>
