@@ -31,7 +31,7 @@
 
     <div class="mb-3 d-flex align-items-end custom-input-group">
       <div class="flex-grow-1 me-2">
-        <label [ngClass]="{'text-danger-label': invalidField(activityRef)}" for="activity" class="form-label">Activity</label>
+        <label for="activity" class="form-label">Activity</label>
         <input
           [(ngModel)]="activity"
           #activityRef="ngModel"
@@ -44,14 +44,8 @@
           class="form-control"
           placeholder="Activity made"
         />
-        @if (invalidField(activityRef)) {
-        <div class="error-message d-flex align-items-center">
-          <i class="ph ph-warning-circle"></i>
-          <p class="mb-0">Activity is required</p>
-        </div>
-        }
       </div>
-      <app-secondary-button [ngStyle]="invalidField(activityRef) ? {marginBottom: '24px'} : {}"></app-secondary-button>
+      <app-secondary-button [disabled]="activity.length === 0" textButton="Add Activity" phClass="ph ph-plus"></app-secondary-button>
     </div>
 
     <div class="activities-group">
@@ -70,6 +64,6 @@
       </div>
     </div>
 
-    <app-primary-button></app-primary-button>
+    <app-primary-button [disabled]="!validForm()" textButton="Generate Certificate"></app-primary-button>
   </div>
 </form>
