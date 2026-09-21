@@ -45,7 +45,8 @@
           placeholder="Activity made"
         />
       </div>
-      <app-secondary-button [disabled]="activity.length === 0" textButton="Add Activity" phClass="ph ph-plus"></app-secondary-button>
+      <app-secondary-button
+      (click)="addActivity()" [disabled]="activity.length === 0" textButton="Add Activity" phClass="ph ph-plus"></app-secondary-button>
     </div>
 
     <div class="activities-group">
@@ -54,7 +55,7 @@
         @for (activity of activities; track $index) {
         <div class="item">
           <span class="item-text">{{ activity }}</span>
-          <div class="remove-button">
+          <div (click)="removeActivity($index)" class="remove-button">
             <i class="ph-bold ph-x"></i>
           </div>
         </div>
