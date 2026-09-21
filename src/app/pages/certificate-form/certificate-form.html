@@ -1,27 +1,57 @@
-<div d-flex flex-column align-items-center>
+<form #form="ngForm" novalidate class="d-flex flex-column align-items-center">
   <div class="content-titles">
     <h1 class="fw-bold custom-title">Certificate Generator</h1>
-    <p class="text-muted mb-4 custom-subtitle">Fill out the form below to generate a new certificate</p>
+    <p class="text-muted mb-4 custom-subtitle">
+      Fill out the form below to generate a new certificate
+    </p>
   </div>
   <div class="custom-card w-100">
     <h2 class="card-title">New Certificate</h2>
     <div class="mb-3 custom-input-group">
-      <label for="name" class="form-label">Name</label>
-      <input [(ngModel)]="name" id="name" class="custom-input" type="text" class="form-control"
-        placeholder="Student name" />
+      <label [ngClass]="{'text-danger-label': invalidField(nameRef)}" for="name" class="form-label">Name</label>
+      <input
+        [(ngModel)]="name"
+        #nameRef="ngModel"
+        name="name"
+        maxlength="150"
+        required
+        id="name"
+        class="custom-input"
+        type="text"
+        class="form-control"
+        placeholder="Student name"
+      />
+      @if (invalidField(nameRef)) {
       <div class="error-message d-flex align-items-center">
         <i class="ph ph-warning-circle"></i>
-        <p class="mb-0">Error message</p>
+        <p class="mb-0">Name is required</p>
       </div>
+      }
     </div>
 
     <div class="mb-3 d-flex align-items-end custom-input-group">
       <div class="flex-grow-1 me-2">
-        <label for="activity" class="form-label">Activity</label>
-        <input [(ngModel)]="activity" id="activity" class="custom-input" type="text" class="form-control"
-          placeholder="Activity made" />
+        <label [ngClass]="{'text-danger-label': invalidField(activityRef)}" for="activity" class="form-label">Activity</label>
+        <input
+          [(ngModel)]="activity"
+          #activityRef="ngModel"
+          name="activity"
+          maxlength="50"
+          required
+          id="activity"
+          class="custom-input"
+          type="text"
+          class="form-control"
+          placeholder="Activity made"
+        />
+        @if (invalidField(activityRef)) {
+        <div class="error-message d-flex align-items-center">
+          <i class="ph ph-warning-circle"></i>
+          <p class="mb-0">Activity is required</p>
+        </div>
+        }
       </div>
-      <app-secondary-button></app-secondary-button>
+      <app-secondary-button [ngStyle]="invalidField(activityRef) ? {marginBottom: '24px'} : {}"></app-secondary-button>
     </div>
 
     <div class="activities-group">
@@ -34,13 +64,12 @@
             <i class="ph-bold ph-x"></i>
           </div>
         </div>
-        @if ($index < activities.length - 1) { <hr>
-          }
-        }
+        @if ($index < activities.length - 1) {
+        <hr />
+        } }
       </div>
     </div>
 
     <app-primary-button></app-primary-button>
-
   </div>
-</div>
+</form>
