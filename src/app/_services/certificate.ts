@@ -8,6 +8,6 @@ export class CertificateService {
 
   addCertificate(certificate: Certificate) {
     this.certificates.push({ ...certificate });
-    console.log(this.certificates);
+    localStorage.setItem('certificates', JSON.stringify(this.certificates));
   }
 }

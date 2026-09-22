@@ -34,6 +34,9 @@ export class CertificateForm {
   }
 
   addActivity() {
+    if (this.activity.trim().length === 0) {
+      return;
+    }
     this.certificate.activities.push(this.activity);
     this.activity = '';
   }
