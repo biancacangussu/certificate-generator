@@ -46,7 +46,7 @@
         />
       </div>
       <app-secondary-button
-      (click)="addActivity()" [disabled]="activity.length === 0" textButton="Add Activity" phClass="ph ph-plus"></app-secondary-button>
+      (click)="addActivity()" [disabled]="!activity || activity.length === 0" textButton="Add Activity" phClass="ph ph-plus"></app-secondary-button>
     </div>
 
     <div class="activities-group">
