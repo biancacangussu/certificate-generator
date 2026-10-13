@@ -6,6 +6,7 @@ import { FormsModule, NgModel, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Certificate } from '../../interfaces/certificate';
 import { CertificateService } from '../../_services/certificate';
+import { Router } from '@angular/router';
 
 @Component({
   imports: [SecondaryButton, PrimaryButton, FormsModule, CommonModule],
@@ -14,7 +15,7 @@ import { CertificateService } from '../../_services/certificate';
   templateUrl: './certificate-form.html',
 })
 export class CertificateForm {
-  constructor(private certificateService: CertificateService) {}
+  constructor(private certificateService: CertificateService, private route: Router) {}
   @ViewChild('form') form!: NgForm;
 
   certificate: Certificate = {
@@ -53,8 +54,10 @@ export class CertificateForm {
     this.certificate.issuedDate = this.setDate();
     this.certificateService.addCertificate(this.certificate);
 
-    this.certificate = this.cleanForm();
-    this.form.resetForm();
+    this.route.navigate(['certificates', this.certificate.id]);
+
+    // this.certificate = this.cleanForm();
+    // this.form.resetForm();
   }
 
   setDate() {

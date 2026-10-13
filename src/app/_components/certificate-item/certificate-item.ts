@@ -16,6 +16,6 @@ export class CertificateItem {
   constructor(private router: Router) {}
 
   redirectToCertificate(){
-    this.router.navigate(['/certificate', this.id]);
+    this.router.navigate(['/certificates', this.id]);
   }
 }
