@@ -10,4 +10,9 @@ export class CertificateService {
     this.certificates.unshift({ ...certificate });
     localStorage.setItem('certificates', JSON.stringify(this.certificates));
   }
+
+  removeCertificate(id: string) {
+    this.certificates = this.certificates.filter(certificate => certificate.id !== id);
+    localStorage.setItem('certificates', JSON.stringify(this.certificates));
+  }
 }

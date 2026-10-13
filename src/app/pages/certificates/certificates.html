@@ -18,7 +18,8 @@
   @if (certificates.length > 0) {
   <div class="list-certificates w-100">
     @for (certificate of certificates; track $index) {
-    <app-certificate-item [name]="certificate.name" [issuedDate]="certificate.issuedDate" [id]="certificate.id">
+    <app-certificate-item [name]="certificate.name" [issuedDate]="certificate.issuedDate" [id]="certificate.id"
+      (remove)="removeCertificate($event)">
     </app-certificate-item>
     }
   </div>

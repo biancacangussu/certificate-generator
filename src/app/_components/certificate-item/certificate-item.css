@@ -11,3 +11,17 @@
   border-radius: 8px;
   margin-bottom: 8px;
 }
+
+.remove-button {
+  background: none;
+  border: none;
+  padding: 4px;
+  color: #F87171;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.remove-button:hover {
+  color: #DC2626;
+}

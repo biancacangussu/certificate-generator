@@ -20,4 +20,9 @@ export class Certificates implements OnInit {
   ngOnInit() {
     this.certificates = this.certificateService.certificates;
   }
+
+  removeCertificate(id: string) {
+    this.certificateService.removeCertificate(id);
+    this.certificates = this.certificateService.certificates;
+  }
 }

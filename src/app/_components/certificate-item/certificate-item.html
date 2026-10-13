@@ -8,6 +8,11 @@
         Generated on {{ issuedDate }}
       </small>
     </div>
-    <app-secondary-button textButton="View" phClass="ph ph-eye" (click)="redirectToCertificate()"></app-secondary-button>
+    <div class="d-flex align-items-center gap-2">
+      <app-secondary-button textButton="View" phClass="ph ph-eye" (click)="redirectToCertificate()"></app-secondary-button>
+      <button type="button" class="remove-button" aria-label="Remove certificate" (click)="removeCertificate()">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
   </div>
 </div>
