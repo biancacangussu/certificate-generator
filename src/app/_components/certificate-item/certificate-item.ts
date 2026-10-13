@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { SecondaryButton } from '../secondary-button/secondary-button';
 import { Router } from '@angular/router';
 
@@ -9,7 +9,9 @@ import { Router } from '@angular/router';
   templateUrl: './certificate-item.html',
 })
 export class CertificateItem {
-  id: string = '1';
+  @Input() name: string = '';
+  @Input() issuedDate: string = '';
+  @Input() id: string = '';
 
   constructor(private router: Router) {}
 

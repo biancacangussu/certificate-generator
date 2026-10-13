@@ -4,6 +4,7 @@
     <p class="text-muted mb-4 custom-subtitle">Visualize all the certificates you have generated below.</p>
   </div>
 
+  @if (certificates.length === 0) {
   <div class="custom-card w-100">
     <i class="ph ph-certificate"></i>
     <div class="custom-warning-titles">
@@ -12,10 +13,14 @@
     </div>
     <app-secondary-button routerLink="/certificates/new" textButton="Generate certificate"></app-secondary-button>
   </div>
+  }
 
-  <!-- <div class="list-certificates w-100">
-    <app-certificate-item></app-certificate-item>
-    <app-certificate-item></app-certificate-item>
-    <app-certificate-item></app-certificate-item>
-  </div> -->
+  @if (certificates.length > 0) {
+  <div class="list-certificates w-100">
+    @for (certificate of certificates; track $index) {
+    <app-certificate-item [name]="certificate.name" [issuedDate]="certificate.issuedDate" [id]="certificate.id">
+    </app-certificate-item>
+    }
+  </div>
+  }
 </div>
