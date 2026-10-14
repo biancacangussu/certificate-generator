@@ -12,7 +12,7 @@ import html2canvas from 'html2canvas';
   styleUrl: './certificate.css',
   templateUrl: './certificate.html',
 })
-export class CertificateComponent implements OnInit {
+export class CertificateDetail implements OnInit {
   id: string | null= '';
   certificate: Certificate | undefined;
 

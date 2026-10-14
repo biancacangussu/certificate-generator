@@ -1,3 +1,15 @@
+:root {
+  --color-primary: #3B5AC2;
+  --color-primary-dark: #1A2856;
+  --color-text: #121621;
+  --color-text-muted: #64748B;
+  --color-border: #E2E8F0;
+  --color-danger: #E95F5F;
+  --color-danger-light: #F87171;
+  --color-danger-dark: #DC2626;
+  --color-white: #FFFFFF;
+}
+
 body {
   font-family: 'Inter', sans-serif !important;
   font-optical-sizing: auto !important;
@@ -18,7 +30,7 @@ body {
   line-height: 20px;
   letter-spacing: 0;
   text-align: center;
-  color: #64748B;
+  color: var(--color-text-muted);
 }
 
 .content-titles {

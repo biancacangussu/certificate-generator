@@ -2,7 +2,7 @@
   max-width: 672px;
   gap: 32px;
   border-radius: 8px;
-  border: 1px solid #E2E8F0;
+  border: 1px solid var(--color-border);
   padding: 32px;
 }
 
@@ -11,7 +11,7 @@
   font-size: 18px;
   line-height: 28px;
   letter-spacing: 0px;
-  color:#1A2856;
+  color: var(--color-primary-dark);
   margin-bottom: 20px;
 }
 
@@ -24,12 +24,12 @@ label {
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0px;
-  color: #1A2856;
+  color: var(--color-primary-dark);
 }
 
 .item-list {
   width: 100%;
-  border: 1px solid #E2E8F0;
+  border: 1px solid var(--color-border);
   border-radius: 8px;
   padding: 16px;
   gap: 12px;
@@ -46,30 +46,30 @@ label {
   all: unset;
   display: block;
   height: 1px;
-  background-color: #E2E8F0;
+  background-color: var(--color-border);
 }
 
 .remove-button i {
   padding: 5.75px;
-  color: #E95F5F;
+  color: var(--color-danger);
   font-size: 12.5px;
   border-radius: 4px;
   cursor: pointer;
 }
 
 .remove-button i:hover {
-  background-color: #E2E8F0;
+  background-color: var(--color-border);
 }
 
 .custom-input {
-  border: 1px solid #E2E8F0;
+  border: 1px solid var(--color-border);
   border-radius: 6px;
   padding: 8px 12px;
   height: 40px;
 }
 
 .custom-input:focus {
-  border: 1px solid #3B5AC2;
+  border: 1px solid var(--color-primary);
   box-shadow: none;
 }
 
@@ -78,12 +78,12 @@ label {
 }
 
 .custom-input-group:has(input:focus) label {
-  color:#3B5AC2;
+  color: var(--color-primary);
 }
 
 .error-message {
   gap: 4px;
-  color: #E95F5F;
+  color: var(--color-danger);
   margin-top: 8px;
 }
 
@@ -96,11 +96,11 @@ label {
 }
 
 .text-danger-label {
-  color: #E95F5F;
+  color: var(--color-danger);
 }
 
 .empty-list {
   font-size: 14px;
   line-height: 20px;
-  color: #64748B;
+  color: var(--color-text-muted);
 }

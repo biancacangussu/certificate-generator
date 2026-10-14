@@ -1,8 +1,8 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { v4 as uuidv4 } from 'uuid';
 import { SecondaryButton } from '../../_components/secondary-button/secondary-button';
 import { PrimaryButton } from '../../_components/primary-button/primary-button';
-import { FormsModule, NgModel, NgForm } from '@angular/forms';
+import { FormsModule, NgModel } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Certificate } from '../../interfaces/certificate';
 import { CertificateService } from '../../_services/certificate';
@@ -15,8 +15,7 @@ import { Router } from '@angular/router';
   templateUrl: './certificate-form.html',
 })
 export class CertificateForm {
-  constructor(private certificateService: CertificateService, private route: Router) {}
-  @ViewChild('form') form!: NgForm;
+  constructor(private certificateService: CertificateService, private router: Router) {}
 
   certificate: Certificate = {
     id: '',
@@ -51,16 +50,13 @@ export class CertificateForm {
       return;
     }
     this.certificate.id = uuidv4();
-    this.certificate.issuedDate = this.setDate();
+    this.certificate.issuedDate = this.getToday();
     this.certificateService.addCertificate(this.certificate);
 
-    this.route.navigate(['certificates', this.certificate.id]);
-
-    // this.certificate = this.cleanForm();
-    // this.form.resetForm();
+    this.router.navigate(['certificates', this.certificate.id]);
   }
 
-  setDate() {
+  getToday() {
     const date = new Date();
     const day = String(date.getDate()).padStart(2, '0');
     const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -68,14 +64,5 @@ export class CertificateForm {
 
     const formatDate = `${year}-${month}-${day}`;
     return formatDate;
-  }
-
-  cleanForm(): Certificate {
-    return {
-      id: '',
-      name: '',
-      activities: [],
-      issuedDate: '',
-    };
   }
 }

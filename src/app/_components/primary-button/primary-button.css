@@ -5,8 +5,8 @@
   border: none;
   border-radius: 6px;
   font-size: 16px;
-  color: #ffffff;
-  background: linear-gradient(90deg, #1A2856 0%, #3B5AC2 100%);
+  color: var(--color-white);
+  background: linear-gradient(90deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
   cursor: pointer;
   font-weight: 600;
 }

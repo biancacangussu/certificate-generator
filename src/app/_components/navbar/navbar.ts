@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { NgClass, CommonModule } from '@angular/common';
 
@@ -9,6 +8,4 @@ import { NgClass, CommonModule } from '@angular/common';
   styleUrl: './navbar.css',
   templateUrl: './navbar.html',
 })
-export class Navbar {
-
-}
+export class Navbar {}

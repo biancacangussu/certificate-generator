@@ -1,7 +1,7 @@
 .navbar {
-  background-color: #fff;
+  background-color: var(--color-white);
   padding: 1rem 28px 1rem 12px;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .navbar-logo img{
@@ -9,7 +9,7 @@
 }
 
 .active {
-  color: #3B5AC2;
+  color: var(--color-primary);
 }
 
 .nav-link {
@@ -17,7 +17,7 @@
 }
 
 .nav-link.active {
-  color: #3B5AC2;
+  color: var(--color-primary);
   font-weight: 600;
 }
 
