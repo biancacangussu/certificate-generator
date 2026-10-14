@@ -1,59 +1,45 @@
-# CertificateGenerator
+# Certificate Generator
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.5.
+A web app for creating certificates of completion. Enter a student's name and the activities they completed, and the app generates a certificate you can view and download as a PNG image.
 
-## Development server
+I built this project to study **Angular 22**: standalone components, the new control flow (`@if`, `@for`), routing, template-driven forms and services.
 
-To start a local development server, run:
+🔗 **Live demo:** _coming soon_
+<!-- 📸 After the deploy, replace "coming soon" above with the link, e.g. [certificate-generator.vercel.app](https://...) -->
 
-```bash
-ng serve
-```
+---
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Features
 
-## Code scaffolding
+- Generate a certificate with the student's name and a list of activities
+- View every certificate you've generated
+- Download a certificate as a PNG image
+- Remove certificates from the list
+- Certificates are saved in the browser (`localStorage`), so they stay after a refresh
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Built with
 
-```bash
-ng generate component component-name
-```
+- [Angular 22](https://angular.dev): standalone components and the new control flow
+- [Bootstrap 5](https://getbootstrap.com): layout and utility classes
+- [Phosphor Icons](https://phosphoricons.com): icons
+- [html2canvas](https://html2canvas.hertzen.com): turns the certificate into an image for download
+- [Vitest](https://vitest.dev): unit tests
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Getting started
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+You need [Node.js](https://nodejs.org) 22.22 or later.
 
 ```bash
-ng test
+git clone https://github.com/biancacangussu/certificate-generator.git
+cd certificate-generator
+npm install
+npm start
 ```
 
-## Running end-to-end tests
+Then open [http://localhost:4200](http://localhost:4200).
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+| Command | What it does |
+|---|---|
+| `npm start` | Starts the development server |
+| `npm run build` | Builds the production version into `dist/` |
+| `npm test` | Runs the unit tests |
