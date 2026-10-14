@@ -4,8 +4,7 @@ A web app for creating certificates of completion. Enter a student's name and th
 
 I built this project to study **Angular 22**: standalone components, the new control flow (`@if`, `@for`), routing, template-driven forms and services.
 
-🔗 **Live demo:** _coming soon_
-<!-- 📸 After the deploy, replace "coming soon" above with the link, e.g. [certificate-generator.vercel.app](https://...) -->
+🔗 **Live demo: https://angular-certificate-generator.netlify.app/
 
 ---
 
