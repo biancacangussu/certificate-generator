@@ -1,17 +1,17 @@
 <div class="d-flex flex-column align-items-center">
   <div class="content-titles">
     <h1 class="fw-bold custom-title">Generated Certificates</h1>
-    <p class="text-muted mb-4 custom-subtitle">Visualize all the certificates you have generated below.</p>
+    <p class="text-muted mb-4 custom-subtitle">All the certificates you've generated.</p>
   </div>
 
   @if (certificates.length === 0) {
   <div class="custom-card w-100">
     <i class="ph ph-certificate"></i>
     <div class="custom-warning-titles">
-      <h3 class="card-title">None Certificates Generated Yet</h3>
-      <p class="card-subtitle">To consult your history, please generate a certificate first.</p>
+      <h3 class="card-title">No certificates yet</h3>
+      <p class="card-subtitle">Certificates you generate will show up here.</p>
     </div>
-    <app-secondary-button routerLink="/certificates/new" textButton="Generate certificate"></app-secondary-button>
+    <app-secondary-button routerLink="/certificates/new" textButton="Generate your first certificate"></app-secondary-button>
   </div>
   }
 

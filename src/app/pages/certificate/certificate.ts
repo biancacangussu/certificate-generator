@@ -3,10 +3,11 @@ import { SecondaryButton } from '../../_components/secondary-button/secondary-bu
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CertificateService } from '../../_services/certificate';
 import { Certificate } from '../../interfaces/certificate';
+import { DatePipe } from '@angular/common';
 import html2canvas from 'html2canvas';
 
 @Component({
-  imports: [SecondaryButton, RouterLink],
+  imports: [SecondaryButton, RouterLink, DatePipe],
   selector: 'app-certificate',
   styleUrl: './certificate.css',
   templateUrl: './certificate.html',
@@ -34,9 +35,18 @@ export class CertificateComponent implements OnInit {
     html2canvas(this.certificateElement.nativeElement, { scale: 2 }).then(canvas => {
       const link = document.createElement('a');
       link.href = canvas.toDataURL('image/png');
-      link.download = 'certificate.png';
+      link.download = `certificate-${this.fileName(this.certificate!.name)}.png`;
       link.click();
     });
 
+  }
+
+  private fileName(name: string) {
+    return name
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '');
   }
 }

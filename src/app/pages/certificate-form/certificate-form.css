@@ -98,3 +98,9 @@ label {
 .text-danger-label {
   color: #E95F5F;
 }
+
+.empty-list {
+  font-size: 14px;
+  line-height: 20px;
+  color: #64748B;
+}

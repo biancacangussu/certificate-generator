@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { SecondaryButton } from '../secondary-button/secondary-button';
 import { Router } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 @Component({
-  imports: [SecondaryButton],
+  imports: [SecondaryButton, DatePipe],
   selector: 'app-certificate-item',
   styleUrl: './certificate-item.css',
   templateUrl: './certificate-item.html',
